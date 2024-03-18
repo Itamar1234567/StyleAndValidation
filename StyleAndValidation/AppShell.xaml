@@ -13,12 +13,12 @@
         Route="MainPage"
         Shell.FlyoutBehavior="Disabled"
         Shell.FlyoutItemIsVisible="False" />
-    <FlyoutItem  Title="סוד כמוס" Icon="dotnet_bot.png">
+    <FlyoutItem Title="סוד כמוס" Icon="dotnet_bot.png">
         <ShellContent
             Title="דף הבית"
             ContentTemplate="{DataTemplate local:MyPage}"
             Route="MyPage" />
-        
+
     </FlyoutItem>
     <MenuItem Clicked="MenuItem_Clicked" Text="יציאה" />
 
