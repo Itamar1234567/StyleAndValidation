@@ -65,6 +65,7 @@ namespace StyleAndValidation.ViewModels
         #endregion
         public RegisterPageViewModel(AppServices service)
         {
+
             appServices = service;
             RegisterCommand = new Command(async () => await RegisterUser(),()=>ValidateAll()) ;
             Username = string.Empty;
@@ -81,9 +82,9 @@ namespace StyleAndValidation.ViewModels
             #endregion
             bool ok = await appServices.RegisterUserAsync(registered);
 
-            #region סגירת מסך טעינה
-            await loading.Close();
-            #endregion
+            
+            await AppShell.Current.Navigation.PopModalAsync();
+            
             if (ok)
             {
                 await AppShell.Current.DisplayAlert("הצלחה", "הנך מועבר.ת למסך הכניסה", "Ok");
